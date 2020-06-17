@@ -44,7 +44,7 @@ const formulaToObject = (elements) => {
                     type: 'number',
                     value: el.value
                 }
-            case 'braket':
+            case 'brakets':
                 return {
                     type: 'brakets',
                     value: formulaToObject(el.children)
