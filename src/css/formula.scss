@@ -1,0 +1,112 @@
+$basecolor: #e7e7e7;
+$lightencolor: lighten($basecolor, 10%);
+$darkencolor: darken($basecolor, 30%);
+$bordercolor: rgb(129, 127, 127);
+$vindent: .5vh;
+$hindent: .5vw;
+
+
+%blocktemp{
+    margin: $vindent $hindent $vindent $hindent;
+    padding: $vindent $hindent $vindent $hindent;
+    border: none;
+    border-radius: 5px;
+    background: $basecolor;
+    box-shadow:  5px 5px 10px $darkencolor, -5px -5px 10px $lightencolor;
+    transition: transform .2s;
+    &:focus{
+        outline: none;
+    }
+}
+
+%innershadow{
+    border-radius: 10px;
+    background: $basecolor;
+    box-shadow: inset 5px 5px 10px $darkencolor, inset -5px -5px 10px $lightencolor;
+}
+
+.fcontainer {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.fbuttons{
+    margin:5px;   
+}
+
+.fbutton{
+    @extend %blocktemp;
+    transition: background .2s;
+    &:hover {
+        background: lighten($basecolor, 5%);
+    }
+    &:active {
+        background: darken($basecolor, 10%);
+    }
+}
+
+.fconstructor {
+    @extend %innershadow;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    flex-direction: row;
+    align-items: center;
+    
+    
+}
+
+.block{
+    @extend %blocktemp;
+    height: 1.5rem;
+    width: 4rem;
+    display: inline-block;
+}
+
+.sign{
+    @extend %blocktemp;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+}
+
+.brakets {
+    @extend %blocktemp;
+    display: flex;
+    align-items: center;
+    min-height: 3rem;
+    min-width: 3rem;
+    border-left: 1px solid $bordercolor;
+    border-right: 1px solid $bordercolor;
+}
+
+.dragging {
+    opacity: .5;
+}
+
+input[type="number"] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.fresult{
+    @extend %blocktemp;
+}
+
+.finput {
+    @extend %innershadow;
+    border: none;
+    margin: $vindent $hindent $vindent $hindent;
+    padding: $vindent $hindent $vindent $hindent;
+    &:focus{
+        outline: none;
+    }
+}
+
+
